@@ -1,0 +1,84 @@
+.container {
+/*   border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+// ==============================================
+// Cartes Travaux
+
+
+.cards-travaux {
+/*   border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 24px;
+}
+
+// double carte
+.cards-travaux__double {
+  /*   border: 1px solid green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 24px;
+}
+
+
+// carte simple
+.card {
+  /*   border: 1px solid blue; */
+  height: 224px;
+  width: 160px;
+  margin: 16px 8px;
+  border-radius: 16px;
+  background: #d0caa8;
+  box-shadow: 0px 6px 7px -3px #000000, 0px 3px 10px 4px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  position: relative;
+}
+
+.card-little-logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid blue;
+    width: 48px;
+    height: 48px;
+    border-radius: 0 16px 0 0;
+  }
+
+//  ==============================================
+// Cartes Plan
+
+.cards-plan {
+  /*   border: 1px solid orange; */
+  margin: 24px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+//  ==============================================
+// BTN
+
+.gamebar {
+  margin: 24px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+
+  .gamebar__btn {
+      margin: 0 48px;
+      cursor: pointer;
+  }
+}
