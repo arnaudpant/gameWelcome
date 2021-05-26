@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0px 6px 7px -3px rgba(0,0,0,0.5), 0px 3px 10px 4px rgba(0,0,0,0.2);
+  position: relative;
 }
 
 h1 {
@@ -14,3 +15,24 @@ h1 {
     font-size: 48px;
     letter-spacing: 8px;
   }
+
+
+.navbar__start {
+  position: absolute;
+  right: 48px;
+  width: 108px;
+  height: 48px;
+  background: $color-jaune;
+  border-radius: 999px;
+  box-shadow: 0px 6px 7px -3px rgba(0,0,0,0.5), 0px 3px 10px 4px rgba(0,0,0,0.2);
+  cursor: pointer;
+
+  span {
+    color: $color-rouge;
+    font-size: 24px;
+    line-height: 24px;
+    text-align:center;
+    display: block;
+    margin: 12px;
+  }
+}

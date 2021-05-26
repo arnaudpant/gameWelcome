@@ -76,14 +76,16 @@ const startBtnElt = document.querySelector('.navbar__start');
 const testBtnElt = document.querySelector('.navbar__chrono');
 
 let card1NumberElt = document.querySelector('.card1-face__number');
-let card1ActionElt = document.querySelector('.card1__action');
-let card1CoinElt = document.querySelector('.card1__number__next');
+let card1ActionElt = document.querySelector('.card1-action');
+let card1CoinElt = document.querySelector('.card1-face__logo-next');
 
-let card2NumberElt = document.querySelector('.card2__number');
-let card2ActionElt = document.querySelector('.card2__action');
+let card2NumberElt = document.querySelector('.card2-face__number');
+let card2ActionElt = document.querySelector('.card2-action');
+let card2CoinElt = document.querySelector('.card2-face__logo-next');
 
-let card3NumberElt = document.querySelector('.card3__number');
-let card3ActionElt = document.querySelector('.card3__action');
+let card3NumberElt = document.querySelector('.card3-face__number');
+let card3ActionElt = document.querySelector('.card3-action');
+let card3CoinElt = document.querySelector('.card3-face__logo-next');
 
 let btnPrevElt = document.querySelector('.btn-prev');
 let btnNextElt = document.querySelector('.btn-next');
@@ -92,7 +94,6 @@ let btnNextElt = document.querySelector('.btn-next');
 // EventListener
 // =======================================
 startBtnElt.addEventListener('click', startNewGame);
-testBtnElt.addEventListener('click', testFunction);
 btnPrevElt.addEventListener('click', prevCard);
 btnNextElt.addEventListener('click', nextCard);
 
@@ -154,48 +155,82 @@ function prevCard(){
 
 
 
+// Affichage des cartes number
 
 function affichageCardsTravaux(){
 //   Card 1
   card1NumberElt.innerText = arrayPlayCardTravaux[numberTour][0];
   affichageDosCardTravaux(arrayPlayCardTravaux[numberTour][1], card1ActionElt);
+  affichageCardTravauxLittleLogo(arrayPlayCardTravaux[numberTour + 1][1], card1CoinElt);
   
 //  Card 2 
   card2NumberElt.innerText = arrayPlayCardTravaux[numberTour + 27][0];
   affichageDosCardTravaux(arrayPlayCardTravaux[numberTour + 27][1], card2ActionElt);
+  affichageCardTravauxLittleLogo(arrayPlayCardTravaux[numberTour + 28][1], card2CoinElt);
   
 //  Card 3 
   card3NumberElt.innerText = arrayPlayCardTravaux[numberTour + 54][0];
   affichageDosCardTravaux(arrayPlayCardTravaux[numberTour + 54][1], card3ActionElt);
+  affichageCardTravauxLittleLogo(arrayPlayCardTravaux[numberTour + 55][1], card3CoinElt);
 }
 
 
-
+// Affichage des cartes travaux
 
 function affichageDosCardTravaux(numberCardDos, cardXActionElt) {
   switch (numberCardDos) {
     case 'géometre': 
-      cardXActionElt.innerHTML = 'GEOMETRE';
+      cardXActionElt.innerHTML = '<img src="/images/card-geometre.svg" alt="image geometre">';
       break;
       
      case 'bis': 
-      cardXActionElt.innerHTML = 'BIS';
+      cardXActionElt.innerHTML = '<img src="/images/card-bis.svg" alt="image bis">';
       break;
       
       case 'paysagiste': 
-      cardXActionElt.innerHTML = 'PAYSAGISTE';
+      cardXActionElt.innerHTML = '<img src="/images/card-paysagiste.svg" alt="image paysagiste">';
       break;
       
       case 'immobilier': 
-      cardXActionElt.innerHTML = 'IMMOBILIER';
+      cardXActionElt.innerHTML = '<img src="/images/card-immobilier.svg" alt="image immobilier">';
       break;
       
       case 'piscine': 
-      cardXActionElt.innerHTML = 'PISCINE';
+      cardXActionElt.innerHTML = '<img src="/images/card-piscine.svg" alt="image piscine">';
       break;
       
       case 'interim': 
-      cardXActionElt.innerHTML = 'INTERIM';
+      cardXActionElt.innerHTML = '<img src="/images/card-interim.svg" alt="image interim">';
+      break;
+      
+  }
+}
+ 
+
+function affichageCardTravauxLittleLogo(numberCardNumber, cardXNumberLogoElt) {
+  switch (numberCardNumber) {
+    case 'géometre': 
+      cardXNumberLogoElt.innerHTML = '<img src="/images/card-geometre.svg" alt="image geometre">';
+      break;
+      
+     case 'bis': 
+      cardXNumberLogoElt.innerHTML = '<img src="/images/card-bis.svg" alt="image bis">';
+      break;
+      
+      case 'paysagiste': 
+      cardXNumberLogoElt.innerHTML = '<img src="/images/card-paysagiste.svg" alt="image paysagiste">';
+      break;
+      
+      case 'immobilier': 
+      cardXNumberLogoElt.innerHTML = '<img src="/images/card-immobilier.svg" alt="image immobilier">';
+      break;
+      
+      case 'piscine': 
+      cardXNumberLogoElt.innerHTML = '<img src="/images/card-piscine.svg" alt="image piscine">';
+      break;
+      
+      case 'interim': 
+      cardXNumberLogoElt.innerHTML = '<img src="/images/card-interim.svg" alt="image interim">';
       break;
       
   }

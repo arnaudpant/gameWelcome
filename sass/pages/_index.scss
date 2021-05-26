@@ -40,10 +40,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 80px;
   position: relative;
 }
 
+// Carte Number
 .card-little-logo {
     position: absolute;
     top: 0;
@@ -53,6 +53,15 @@
     height: 48px;
     border-radius: 0 16px 0 0;
   }
+
+ .card1-face__number,
+ .card2-face__number,
+ .card3-face__number {
+    font-size: 80px;
+ } 
+
+//  Carte Action
+
 
 //  ==============================================
 // Cartes Plan
