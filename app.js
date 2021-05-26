@@ -87,8 +87,20 @@ let card3NumberElt = document.querySelector('.card3-face__number');
 let card3ActionElt = document.querySelector('.card3-action');
 let card3CoinElt = document.querySelector('.card3-face__logo-next');
 
+let cardPlanBox1 = document.querySelector('.card-plan-box__n1');
+let cardPlanBox2 = document.querySelector('.card-plan-box__n2');
+let cardPlanBox3 = document.querySelector('.card-plan-box__n3');
+
+let cardPlanPoint11 = document.querySelector('.box-point11');
+let cardPlanPoint12 = document.querySelector('.box-point12');
+let cardPlanPoint21 = document.querySelector('.box-point21');
+let cardPlanPoint22 = document.querySelector('.box-point22');
+let cardPlanPoint31 = document.querySelector('.box-point31');
+let cardPlanPoint32 = document.querySelector('.box-point32');
+
 let btnPrevElt = document.querySelector('.btn-prev');
 let btnNextElt = document.querySelector('.btn-next');
+
 
 // =======================================
 // EventListener
@@ -127,6 +139,7 @@ function startNewGame () {
   melangeArray(arrayPlayCardPlan3);
   
   affichageCardsTravaux();
+  affichageCardsPlan()
 }
 
 
@@ -139,6 +152,22 @@ function melangeArray(array) {
   return array;
 }
 
+
+function affichageCardsPlan() {
+  cardPlanBox1.innerText = arrayPlayCardPlan1[0][0];
+  cardPlanBox2.innerText = arrayPlayCardPlan2[0][0];
+  cardPlanBox3.innerText = arrayPlayCardPlan3[0][0];
+
+  cardPlanPoint11.innerText = arrayPlayCardPlan1[0][1];
+  cardPlanPoint12.innerText = arrayPlayCardPlan1[0][2];
+
+  cardPlanPoint21.innerText = arrayPlayCardPlan2[0][1];
+  cardPlanPoint22.innerText = arrayPlayCardPlan2[0][2];
+
+  cardPlanPoint31.innerText = arrayPlayCardPlan3[0][1];
+  cardPlanPoint32.innerText = arrayPlayCardPlan3[0][2];
+
+}
 
 // Changement de cartes
 function nextCard(){
