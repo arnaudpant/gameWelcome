@@ -1,21 +1,23 @@
 // FLEXBOX
 
-@mixin f-box--full {
+%flex-full-center {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-@mixin f-box--allCenter {
+%flex-align-center {
   justify-content: center;
   align-items: center;
 }
-@mixin f-box--spaceBetween {
+
+%flex-spaceBetween {
   justify-content: space-between;
   align-items: center;
 }
-@mixin f-box--spaceArround {
+
+%flex-spaceArround {
   justify-content: space-around;
   align-items: center;
 }
