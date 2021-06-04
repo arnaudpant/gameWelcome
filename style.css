@@ -5,6 +5,11 @@ body {
 /* Shadow 0dp */
 /* Shadow 1dp */
 /* Shadow 2dp */
+.navbar-over, .navbar-under {
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
 /* Shadow 3dp */
 /* Shadow 4dp */
 /* Shadow 6dp */
@@ -24,6 +29,7 @@ body {
 
 body {
   background: #7FAC8C;
+  height: 100vh;
 }
 
 .navbar {
@@ -34,7 +40,7 @@ body {
   height: 96px;
   width: 100%;
   background-color: #87C4A3;
-  z-index: 10;
+  z-index: 1;
 }
 
 .navbar-under {
@@ -42,9 +48,10 @@ body {
   width: 100%;
   background-color: #E4A2A0;
   position: absolute;
-  top: 0;
-  z-index: 0;
-  -webkit-transform: rotateX(15deg);
-          transform: rotateX(15deg);
+  top: 10px;
+  left: -10px;
+  z-index: -1;
+  -webkit-transform: rotateZ(2deg);
+          transform: rotateZ(2deg);
 }
 /*# sourceMappingURL=style.css.map */

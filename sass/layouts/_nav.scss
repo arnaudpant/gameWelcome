@@ -6,7 +6,8 @@
   height: 96px;
   width: 100%;
   background-color: $color-vert;
-  z-index: 10;
+  z-index: 1;
+  @extend %boxShadow2;
 }
 
 .navbar-under {
@@ -14,7 +15,9 @@
   width: 100%;
   background-color: $color-rose;
   position: absolute;
-  top: 0;
-  z-index: 0;
-  transform: rotateX(15deg);
+  top: 10px;
+  left: -10px;
+  z-index: -1;
+  transform: rotateZ(2deg);
+  @extend %boxShadow2;
 }
