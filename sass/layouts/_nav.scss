@@ -3,6 +3,9 @@
 }
 
 
+
+
+
 //  *** NAVBAR Partie verte ***
 .navbar-over {
   height: 96px;
@@ -14,19 +17,37 @@
 }
 
 
-
 .navbar__chrono {
   height: 100%;
-  width: 100px;
-  @include border-test;
+  width: 1%;
+  // @include border-test;
 }
 
 
 .navbar__logo {
-  height: 100%;
-  width: 100px;
-  @include border-test(yellow);
+  @extend %flex-full-center;
+  position: relative;
+
+  .navbar__logo__circle {
+    background: $color-beige;
+    height: 88px;
+    width: 88px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: -20px;
+  }
+
+  .navbar__logo__title {
+    font-size: 40px;
+    @extend %police-title;
+    color: $color-rouge;
+    text-shadow: 2px 0px 0px $color-beige, -2px 0px 0px $color-beige, 0px 2px 0px $color-beige, 0px -2px 0px $color-beige, 0px -2px 0px $color-beige, -7px 0px 0px $color-bleu, -12px 0px 0px $color-bleu, -12px 0px 0px $color-bleu;
+    z-index: 10;
+  }
+
 }
+
 
 .navbar__btn-start {
   height: 40px;
@@ -38,11 +59,15 @@
   padding: 0 16px;
   text-align: center;
   font-size: 24px;
+  cursor: pointer;
 
     span {
       line-height: 40px;
     }
 }
+
+
+
 
 
 // *** NAVBAR Partie rose ***

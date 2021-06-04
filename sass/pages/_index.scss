@@ -1,0 +1,30 @@
+.container {
+    background: $color-jaune;
+    @extend %flex-full-center;
+    flex-direction: column;
+    border-radius: 16px;
+    @extend %boxShadow2;
+}
+
+
+// *** Cartes travaux ***
+.box-cards-travaux {
+    @extend %flex-full-center;
+}
+
+
+
+
+// *** Boutons ***
+.box-btn {
+    @extend %flex-full-center;
+}
+
+
+
+
+
+// *** Cartes plan ***
+.box-cards-plan {
+    @extend %flex-full-center;
+}
