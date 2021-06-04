@@ -2,14 +2,50 @@
   position: relative;
 }
 
+
+//  *** NAVBAR Partie verte ***
 .navbar-over {
   height: 96px;
   width: 100%;
+  @extend %flex-spaceBetween;
   background-color: $color-vert;
-  z-index: 1;
+  // z-index: 1;
   @extend %boxShadow2;
 }
 
+
+
+.navbar__chrono {
+  height: 100%;
+  width: 100px;
+  @include border-test;
+}
+
+
+.navbar__logo {
+  height: 100%;
+  width: 100px;
+  @include border-test(yellow);
+}
+
+.navbar__btn-start {
+  height: 40px;
+  background: $color-rouge;
+  color: $color-beige;
+  border-radius: 999px;
+  @extend %boxShadow4;
+  margin-right: 16px;
+  padding: 0 16px;
+  text-align: center;
+  font-size: 24px;
+
+    span {
+      line-height: 40px;
+    }
+}
+
+
+// *** NAVBAR Partie rose ***
 .navbar-under {
   height: 96px;
   width: 100%;
