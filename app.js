@@ -32,7 +32,13 @@ const arrayCardPlan1 = [
   [[1, 1, 1, 1, 1, 1], 8, 4],
   [[2, 2, 2, 2], 8, 4],
   [[4, 4], 6, 3],
-  [[3,3,3], 8, 4]
+  [[3, 3, 3], 8, 4],
+  [["Full rue 1"], 6, 3],
+  [["Full rue 2"], 6, 3],
+  [["Full rue 3"], 6, 3],
+  [["First + last house toutes les rues"], 7, 4],
+  [["7 interimaires"], 6, 3],
+  [["5 bis dans une rue"], 8, 3]
 ];
 
 const arrayCardPlan2 = [
@@ -40,7 +46,11 @@ const arrayCardPlan2 = [
   [[3, 3, 4], 12, 7],
   [[3, 6], 8, 4],
   [[4, 5], 9, 5],
-  [[1, 1, 6], 11, 6]
+  [[1, 1, 6], 11, 6],
+  [["All parcs + piscine rue n°1"], 8, 3],
+  [["All parcs + piscine rue n°2"], 8, 3],
+  [["All parcs + piscine rue n°3"], 8, 3],
+  [["All parcs OU piscine ds 2 rues"], 7, 4]
 ];
 
 const arrayCardPlan3 = [
@@ -112,7 +122,9 @@ let partieSolo = false;
 //  ****** Functions ******
 // =======================================
 
-// Clic sur Start
+
+// +++ Clic sur Start +++
+
 function startNewGame() {
   arrayPlayCardTravaux = arrayCardTravaux.slice();
   melangeArray(arrayPlayCardTravaux);
@@ -143,23 +155,29 @@ function melangeArray(array) {
   return array;
 }
 
-// Partie Solo
+
+
+
+
+// +++ Partie Solo +++
 
 function startSoloGame() {
-  arrayPlayCardTravaux.splice(soloNbr, 0, ["Fin", 'géometre']);
+  arrayPlayCardTravaux.splice(soloNbr, 0, ["Solo", 'géometre']);
   partieSolo = true;
   soloBtnElt.style.background = '#F5DEA3';
   soloBtnElt.style.color = '#000';
 }
 
 
-// Cartes plans
-function affichageCardsPlan() {
 
+
+
+// +++ Cartes plans +++
+
+function affichageCardsPlan() {
   cardPlanBox1.innerText = arrayPlayCardPlan1[0][0].join('-');
   cardPlanBox2.innerText = arrayPlayCardPlan2[0][0].join('-');
   cardPlanBox3.innerText = arrayPlayCardPlan3[0][0].join('-');
-
   affichageCardsPlanPoint()
 }
 
@@ -194,56 +212,84 @@ function cardPReturn(a) {
 }
 
 
-// Changement de cartes
-function nextCard(){
-  numberTour++;
+
+
+
+// +++ Changement de cartes +++
+function nextCard() {
+  if (numberTour > 78 && !partieSolo) {
+    numberTour = 0;
+  } else {
+    numberTour = numberTour + 3;
+  }
   affichageCardsTravaux();
-  affichageNumberCard()
+  affichageNumberCard();
   return numberTour
 }
 
-function prevCard(){
-  numberTour--;
+function prevCard() {
+  if (numberTour >= 3) {
+    numberTour = numberTour - 3;
   affichageCardsTravaux();
   affichageNumberCard()
   return numberTour
+  } else {
+    return 
+  }
+  
 }
 
 function affichageNumberCard() {
-  btnCompteur.innerText = 81 - ((numberTour + 1) * 3);
+  btnCompteur.innerText = numberTour + 3;
 }
 
 
 
-// Affichage des cartes number
+
+
+// +++ Affichage des cartes number +++
 
 function affichageCardsTravaux() {
   
   if (partieSolo) {
-    if (arrayPlayCardTravaux[numberTour][0] == "Fin" || arrayPlayCardTravaux[numberTour + 27][0] == "Fin" || arrayPlayCardTravaux[numberTour + 54][0] == "Fin") {
-      btnNextElt.style.display = 'none';
+    if (arrayPlayCardTravaux[numberTour][0] == "Solo" || arrayPlayCardTravaux[numberTour + 1][0] == "Solo" || arrayPlayCardTravaux[numberTour + 2][0] == "Solo") {
+      card1NumberElt.style.fontSize = "60px";
+      card2NumberElt.style.fontSize = "60px";
+      card3NumberElt.style.fontSize = "60px";
 
+      cardPlanPoint11.style.display = 'none';
+      cardPlanPoint21.style.display = 'none';
+      cardPlanPoint31.style.display = 'none';
+    }
+    if (numberTour === 78) {
+      alert("Fin de partie");
     }
   }
 
 //   Card 1
   card1NumberElt.innerText = arrayPlayCardTravaux[numberTour][0];
   affichageDosCardTravaux(arrayPlayCardTravaux[numberTour][1], card1ActionElt);
-  affichageCardTravauxLittleLogo(arrayPlayCardTravaux[numberTour + 1][1], card1CoinElt);
+
+  affichageCardTravauxLittleLogo(arrayPlayCardTravaux[numberTour + 3][1], card1CoinElt);
   
 //  Card 2 
-  card2NumberElt.innerText = arrayPlayCardTravaux[numberTour + 27][0];
-  affichageDosCardTravaux(arrayPlayCardTravaux[numberTour + 27][1], card2ActionElt);
-  affichageCardTravauxLittleLogo(arrayPlayCardTravaux[numberTour + 28][1], card2CoinElt);
+  card2NumberElt.innerText = arrayPlayCardTravaux[numberTour + 1][0];
+  affichageDosCardTravaux(arrayPlayCardTravaux[numberTour + 1][1], card2ActionElt);
+
+  affichageCardTravauxLittleLogo(arrayPlayCardTravaux[numberTour + 4][1], card2CoinElt);
   
 //  Card 3 
-  card3NumberElt.innerText = arrayPlayCardTravaux[numberTour + 54][0];
-  affichageDosCardTravaux(arrayPlayCardTravaux[numberTour + 54][1], card3ActionElt);
-  affichageCardTravauxLittleLogo(arrayPlayCardTravaux[numberTour + 55][1], card3CoinElt);
+  card3NumberElt.innerText = arrayPlayCardTravaux[numberTour + 2][0];
+  affichageDosCardTravaux(arrayPlayCardTravaux[numberTour + 2][1], card3ActionElt);
+
+  affichageCardTravauxLittleLogo(arrayPlayCardTravaux[numberTour + 5][1], card3CoinElt);
 }
 
 
-// Affichage des cartes travaux
+
+
+
+// +++ Affichage des cartes travaux +++
 
 function affichageDosCardTravaux(numberCardDos, cardXActionElt) {
   switch (numberCardDos) {
@@ -299,7 +345,6 @@ function affichageCardTravauxLittleLogo(numberCardNumber, cardXNumberLogoElt) {
       
       case 'interim': 
       cardXNumberLogoElt.innerHTML = '<img src="/images/card-interim.svg" alt="image interim">';
-      break;
-      
+      break;    
   }
  }
