@@ -1,30 +1,10 @@
-/* ******* TP Jeux Welcome *********
+/*
 
-But: Faire apparaitre les cartes pour une partie avec feuille de marque papier
-
-===============================================
-Algorythme
-===============================================
-X> Mettre toutes cartes dans des Array:
-- 81 cartes travaux (2 faces):
-  * 3x [1, 2, 14, 15]
-  * 4x [3, 13]
-  * 5x [4, 12]
-  * 6x [5, 11]
-  * 7x [6, 10]
-  * 8x [7, 9]
-  * 9x [8]
-  Verso:
-  * Piscine [9]
-  * Barrière (géometre) [18] 
-  * Paysagiste [18]
-  * Agence d'interim [9]
-  * Agent immobilier [18]
-  * Bis [9]
-  
-- 29 cartes Plans (3x 6 = 18)
+******* TP Jeux Welcome *******
 
 */
+
+
 // =======================================
 // INITIALISATION
 // =======================================
@@ -73,34 +53,34 @@ const arrayCardPlan3 = [
 // =======================================
 // Elt
 // =======================================
-const startBtnElt = document.querySelector('.navbar__start');
+const startBtnElt = document.querySelector('.navbar__btn-start');
 const testBtnElt = document.querySelector('.navbar__chrono');
 
-let card1NumberElt = document.querySelector('.card1-face__number');
-let card1ActionElt = document.querySelector('.card1-action');
-let card1CoinElt = document.querySelector('.card1-face__logo-next');
+let card1NumberElt = document.querySelector('.face1--number');
+let card1ActionElt = document.querySelector('.card-travaux--dos1');
+let card1CoinElt = document.querySelector('.face1--logo-next');
 
-let card2NumberElt = document.querySelector('.card2-face__number');
-let card2ActionElt = document.querySelector('.card2-action');
-let card2CoinElt = document.querySelector('.card2-face__logo-next');
+let card2NumberElt = document.querySelector('.face2--number');
+let card2ActionElt = document.querySelector('.card-travaux--dos2');
+let card2CoinElt = document.querySelector('.face2--logo-next');
 
-let card3NumberElt = document.querySelector('.card3-face__number');
-let card3ActionElt = document.querySelector('.card3-action');
-let card3CoinElt = document.querySelector('.card3-face__logo-next');
+let card3NumberElt = document.querySelector('.face3--number');
+let card3ActionElt = document.querySelector('.card-travaux--dos3');
+let card3CoinElt = document.querySelector('.face3--logo-next');
 
-let cardPlanBox1 = document.querySelector('.card-plan-box__n1');
-let cardPlanBox2 = document.querySelector('.card-plan-box__n2');
-let cardPlanBox3 = document.querySelector('.card-plan-box__n3');
+let cardPlanBox1 = document.querySelector('.card-plan1');
+let cardPlanBox2 = document.querySelector('.card-plan2');
+let cardPlanBox3 = document.querySelector('.card-plan3');
 
-let cardPlanPoint11 = document.querySelector('.box-point11');
-let cardPlanPoint12 = document.querySelector('.box-point12');
-let cardPlanPoint21 = document.querySelector('.box-point21');
-let cardPlanPoint22 = document.querySelector('.box-point22');
-let cardPlanPoint31 = document.querySelector('.box-point31');
-let cardPlanPoint32 = document.querySelector('.box-point32');
+let cardPlanPoint11 = document.querySelector('.card-plan1--point11');
+let cardPlanPoint12 = document.querySelector('.card-plan1--point12');
+let cardPlanPoint21 = document.querySelector('.card-plan2--point21');
+let cardPlanPoint22 = document.querySelector('.card-plan2--point22');
+let cardPlanPoint31 = document.querySelector('.card-plan3--point31');
+let cardPlanPoint32 = document.querySelector('.card-plan3--point32');
 
-let btnPrevElt = document.querySelector('.btn-prev');
-let btnNextElt = document.querySelector('.btn-next');
+let btnPrevElt = document.querySelector('.box-btn__prev');
+let btnNextElt = document.querySelector('.box-btn__next');
 
 
 // =======================================
