@@ -1,40 +1,49 @@
 .container {
     background: $color-jaune;
+    border-radius: 24px;
+    margin: $margin6 $margin6;
+    @extend %boxShadow2;
     @extend %flex-full-center;
     flex-direction: column;
-    border-radius: 24px;
-    @extend %boxShadow2;
-    margin: 48px 16px;
 }
 
 
 // *** Cartes travaux ***
-.box-cards-travaux {
+.box-cards-travaux,
+.box-cards-plan {
     @extend %flex-full-center;
+    flex-wrap: wrap;
+    margin: $margin2;
+    // @include border-test(red);
 }
 
 
-.double-cards-travaux {
+.cards-travaux-double,
+.cards-plan-triple {
     @extend %flex-full-center;
-    margin: 16px;
+    margin: $margin1;
     background: $color-rose;
     @extend %boxShadow2;
 }
 
 
-.card {
-    height: 250px;
-    width: 180px;
-    background: $color-beige;
-    border-radius: 16px;
-    margin: 16px 16px;
-    @extend %boxShadow2;
-}
-
 
 // *** Boutons ***
 .box-btn {
     @extend %flex-full-center;
+    // height: 56px;
+    width: 33%;
+    margin: $margin2;
+    // @include border-test;
+}
+
+.box-btn__compteur {
+    height: 80px;
+    width: 60px;
+    border-radius: 8px;
+    background: $color-beige;
+    margin: 0 $margin2;
+    @extend %boxShadow1;
 }
 
 

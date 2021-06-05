@@ -1,0 +1,8 @@
+.card {
+    height: 250px;
+    width: 180px;
+    background: $color-beige;
+    border-radius: 16px;
+    margin: $margin2 $margin2;
+    @extend %boxShadow2;
+}

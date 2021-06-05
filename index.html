@@ -2,82 +2,127 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Jeux Welcome" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="init.css" />
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  
-  <title>Welcome the game</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Jeux Welcome" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="init.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<title>Welcome the game</title>
 </head>
 
 <body>
 
-    <!-- ***** NAVBAR ***** -->
+	<!-- ***** NAVBAR ***** -->
 
-    <div class="navbar">
+	<div class="navbar">
 
-        <nav class="navbar-over">
-    
-            <div class="navbar__chrono"></div>
-    
-            <div class="navbar__logo">
+		<nav class="navbar-over">
+
+			<div class="navbar__chrono"></div>
+
+			<div class="navbar__logo">
 				<div class="navbar__logo__circle"></div>
-				<div class="navbar__logo__title"><h1>Welcome</h1></div>
+				<div class="navbar__logo__title">
+					<h1>Welcome</h1>
+				</div>
 			</div>
-    
-            <div class="navbar__btn-start"><span>START</span></div>
-                
-        </nav>
+
+			<div class="navbar__btn-start"><span>START</span></div>
+
+		</nav>
 
 
-        <div class="navbar-under"></div>
+		<div class="navbar-under"></div>
 
-    </div>
-    
-    
+	</div>
 
 
-    <!-- ***** CONTAINER ***** -->
- 
-    <div class="container">
 
 
-        <div class="box-cards-travaux">
+	<!-- ***** CONTAINER ***** -->
 
-			<div class="double-cards-travaux">
+	<div class="container">
+
+		<!-- === Travaux === -->
+		<div class="box-cards-travaux">
+
+			<div class="cards-travaux-double">
 				<div class="card card-travaux--face1"></div>
 				<div class="card card-travaux--dos1"></div>
 			</div>
 
-			<div class="double-cards-travaux">
+			<div class="cards-travaux-double">
 				<div class="card card-travaux--face2"></div>
 				<div class="card card-travaux--dos2"></div>
 			</div>
 
-			<div class="double-cards-travaux">
+			<div class="cards-travaux-double">
 				<div class="card card-travaux--face3"></div>
 				<div class="card card-travaux--dos3"></div>
 			</div>
 
 		</div>
 
+		<!-- === Boutons === -->
+		<div class="box-btn">
 
-        <div class="box-btn"></div>
+			<div class="box-btn__prev">
+				<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 487.622 487.622"
+					style="enable-background:new 0 0 487.622 487.622;" xml:space="preserve">
+					<g>
+						<g>
+							<circle style="fill:#2D90A1;" cx="243.811" cy="243.811" r="243.811" />
+							<path style="opacity:0.37;fill:#2D90A1;enable-background:new    ;" d="M481.893,296.507l-207.93-189.076l14.567,151
+											l-188.819,63.23L266.517,486.56C372.85,476.737,459.387,398.641,481.893,296.507z" />
+							<polygon style="fill:#EBE4CF;" points="387.912,243.811 273.963,107.432 273.963,182.245 99.711,165.961 165.499,243.811 
+											99.711,321.661 273.963,305.378 273.963,380.19 		" />
+						</g>
+					</g>
+				</svg>
+			</div>
+
+			<div class="box-btn__compteur"></div>
+
+			<div class="box-btn__next">
+				<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 487.622 487.622"
+					style="enable-background:new 0 0 487.622 487.622;" xml:space="preserve">
+					<g>
+						<g>
+							<circle style="fill:#2D90A1;" cx="243.811" cy="243.811" r="243.811" />
+							<path style="opacity:0.37;fill:#2D90A1;enable-background:new    ;" d="M481.893,296.507l-207.93-189.076l14.567,151
+							l-188.819,63.23L266.517,486.56C372.85,476.737,459.387,398.641,481.893,296.507z" />
+							<polygon style="fill:#EBE4CF;" points="387.912,243.811 273.963,107.432 273.963,182.245 99.711,165.961 165.499,243.811 
+							99.711,321.661 273.963,305.378 273.963,380.19 		" />
+						</g>
+					</g>
+				</svg>
+			</div>
+
+		</div>
 
 
-        <div class="box-cards-plan"></div>
+		<!-- === Plan === -->
+		<div class="box-cards-plan">
+			<div class="cards-plan-triple">
+				<div class="card card-plan1"></div>
+				<div class="card card-plan2"></div>
+				<div class="card card-plan3"></div>
+			</div>
+		</div>
 
 
-    </div>
+	</div>
 
 
-    <!-- **** FOOTER ***** -->
+	<!-- **** FOOTER ***** -->
 
-    <footer></footer>
+	<footer></footer>
 
-  <script src="app.js"></script>
+	<script src="app.js"></script>
 </body>
 
 </html>
