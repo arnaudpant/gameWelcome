@@ -54,7 +54,7 @@ const arrayCardPlan3 = [
 // Elt
 // =======================================
 const startBtnElt = document.querySelector('.navbar__btn-start');
-const testBtnElt = document.querySelector('.navbar__chrono');
+const soloBtnElt = document.querySelector('.navbar__btn-solo');
 
 let card1NumberElt = document.querySelector('.face1--number');
 let card1ActionElt = document.querySelector('.card-travaux--dos1');
@@ -68,6 +68,7 @@ let card3NumberElt = document.querySelector('.face3--number');
 let card3ActionElt = document.querySelector('.card-travaux--dos3');
 let card3CoinElt = document.querySelector('.face3--logo-next');
 
+let cardPElt = document.querySelectorAll('.cardP');
 let cardPlanBox1 = document.querySelector('.card-plan1');
 let cardPlanBox2 = document.querySelector('.card-plan2');
 let cardPlanBox3 = document.querySelector('.card-plan3');
@@ -82,13 +83,17 @@ let cardPlanPoint32 = document.querySelector('.card-plan3--point32');
 let btnPrevElt = document.querySelector('.box-btn__prev');
 let btnNextElt = document.querySelector('.box-btn__next');
 
+let btnCompteur = document.querySelector('.box-btn__compteur');
+
 
 // =======================================
 // EventListener
 // =======================================
 startBtnElt.addEventListener('click', startNewGame);
+soloBtnElt.addEventListener('click', startSoloGame);
 btnPrevElt.addEventListener('click', prevCard);
 btnNextElt.addEventListener('click', nextCard);
+
 
 
 // =======================================
@@ -99,14 +104,16 @@ let arrayPlayCardTravaux = [];
 let arrayPlayCardPlan1 = [];
 let arrayPlayCardPlan2 = [];
 let arrayPlayCardPlan3 = [];
+let soloNbr = 42 + Math.floor(Math.random() * 39);
+let partieSolo = false;
 
 
 // =======================================
 //  ****** Functions ******
 // =======================================
 
-// Début de partie
-function startNewGame () {
+// Clic sur Start
+function startNewGame() {
   arrayPlayCardTravaux = arrayCardTravaux.slice();
   melangeArray(arrayPlayCardTravaux);
   
@@ -118,14 +125,17 @@ function startNewGame () {
   
   arrayPlayCardPlan3 = arrayCardPlan3.slice();
   melangeArray(arrayPlayCardPlan3);
+
+  startBtnElt.style.display = 'none';
+  soloBtnElt.style.display = 'block';
   
   affichageCardsTravaux();
-  affichageCardsPlan()
+  affichageCardsPlan();
+  affichageNumberCard();
 }
 
 
 function melangeArray(array) {
- 
   for (let i = array.length - 1; i >= 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
@@ -133,41 +143,89 @@ function melangeArray(array) {
   return array;
 }
 
+// Partie Solo
 
+function startSoloGame() {
+  arrayPlayCardTravaux.splice(soloNbr, 0, ["Fin", 'géometre']);
+  partieSolo = true;
+  soloBtnElt.style.background = '#F5DEA3';
+  soloBtnElt.style.color = '#000';
+}
+
+
+// Cartes plans
 function affichageCardsPlan() {
-  cardPlanBox1.innerText = arrayPlayCardPlan1[0][0];
-  cardPlanBox2.innerText = arrayPlayCardPlan2[0][0];
-  cardPlanBox3.innerText = arrayPlayCardPlan3[0][0];
 
+  cardPlanBox1.innerText = arrayPlayCardPlan1[0][0].join('-');
+  cardPlanBox2.innerText = arrayPlayCardPlan2[0][0].join('-');
+  cardPlanBox3.innerText = arrayPlayCardPlan3[0][0].join('-');
+
+  affichageCardsPlanPoint()
+}
+
+function affichageCardsPlanPoint() {
   cardPlanPoint11.innerText = arrayPlayCardPlan1[0][1];
+  cardPlanPoint11.style.background = '#584B37';
   cardPlanPoint12.innerText = arrayPlayCardPlan1[0][2];
+  cardPlanPoint12.style.background = '#c7bb91';
 
   cardPlanPoint21.innerText = arrayPlayCardPlan2[0][1];
+  cardPlanPoint21.style.background = '#584B37';
   cardPlanPoint22.innerText = arrayPlayCardPlan2[0][2];
+  cardPlanPoint22.style.background = '#c7bb91';
 
   cardPlanPoint31.innerText = arrayPlayCardPlan3[0][1];
+  cardPlanPoint31.style.background = '#584B37';
   cardPlanPoint32.innerText = arrayPlayCardPlan3[0][2];
-
+  cardPlanPoint32.style.background = '#c7bb91';
 }
+
+// Clic sur cartes plan
+
+cardPElt.forEach(element => {
+  element.addEventListener('click', () => {
+    cardPReturn(element)
+  })
+})
+
+function cardPReturn(a) {
+  a.childNodes[3].style.display = 'none';
+  a.childNodes[5].style.fontSize = '50px';
+}
+
 
 // Changement de cartes
 function nextCard(){
   numberTour++;
   affichageCardsTravaux();
+  affichageNumberCard()
   return numberTour
 }
 
 function prevCard(){
   numberTour--;
   affichageCardsTravaux();
+  affichageNumberCard()
   return numberTour
+}
+
+function affichageNumberCard() {
+  btnCompteur.innerText = 81 - ((numberTour + 1) * 3);
 }
 
 
 
 // Affichage des cartes number
 
-function affichageCardsTravaux(){
+function affichageCardsTravaux() {
+  
+  if (partieSolo) {
+    if (arrayPlayCardTravaux[numberTour][0] == "Fin" || arrayPlayCardTravaux[numberTour + 27][0] == "Fin" || arrayPlayCardTravaux[numberTour + 54][0] == "Fin") {
+      btnNextElt.style.display = 'none';
+
+    }
+  }
+
 //   Card 1
   card1NumberElt.innerText = arrayPlayCardTravaux[numberTour][0];
   affichageDosCardTravaux(arrayPlayCardTravaux[numberTour][1], card1ActionElt);

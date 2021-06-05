@@ -24,18 +24,25 @@
 
 }
 
+// Cards Plan
 .cardP {
     font-size: 30px;
     flex-direction: column;
     cursor: pointer;
+    text-align: center;
 }
 
 .cardP>div:nth-child(1){
-    background: $color-jaune;
+    background: $color-marron-clair;
+    padding: 16px 0;
 }
 
 .cardP>div:nth-child(2){
     position: absolute;
+    width: 64px;
+    height: 64px;
+    padding-top: 12px;
+    border-radius: 50%;
     bottom: 8px;
     left: 16px;
     font-size: 50px;
@@ -43,7 +50,18 @@
 
 .cardP>div:nth-child(3){
     position: absolute;
+    width: 48px;
+    height: 48px;
+    padding-top: 8px;
+    border-radius: 50%;
     bottom: 8px;
     right: 16px;
     font-size: 40px;
+}
+
+.card-plan--num {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    color: $color-rouge;
 }

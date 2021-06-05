@@ -21,27 +21,15 @@ body {
 }
 
 .card,
-.cardP, .navbar__logo, .container, .box-cards-travaux,
+.cardP, .navbar-over, .navbar__logo, .container, .box-cards-travaux,
 .box-cards-plan, .cards-travaux-double,
-.cards-plan-triple, .box-btn {
+.cards-plan-triple, .box-btn, .box-btn__compteur {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.navbar-over {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -64,7 +52,7 @@ body {
 
 /* Shadow 3dp */
 /* Shadow 4dp */
-.navbar__btn-start {
+.navbar__btn-start, .navbar__btn-solo {
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
@@ -119,14 +107,20 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   cursor: pointer;
+  text-align: center;
 }
 
 .cardP > div:nth-child(1) {
-  background: #F5DEA3;
+  background: #c7bb91;
+  padding: 16px 0;
 }
 
 .cardP > div:nth-child(2) {
   position: absolute;
+  width: 64px;
+  height: 64px;
+  padding-top: 12px;
+  border-radius: 50%;
   bottom: 8px;
   left: 16px;
   font-size: 50px;
@@ -134,9 +128,31 @@ body {
 
 .cardP > div:nth-child(3) {
   position: absolute;
+  width: 48px;
+  height: 48px;
+  padding-top: 8px;
+  border-radius: 50%;
   bottom: 8px;
   right: 16px;
   font-size: 40px;
+}
+
+.card-plan--num {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: #EC2324;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  margin: 8px 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: #000;
 }
 
 .navbar {
@@ -147,11 +163,6 @@ body {
   height: 96px;
   width: 100%;
   background-color: #87C4A3;
-}
-
-.navbar__chrono {
-  height: 100%;
-  width: 1%;
 }
 
 .navbar__logo {
@@ -176,6 +187,8 @@ body {
 }
 
 .navbar__btn-start {
+  position: absolute;
+  right: 16px;
   height: 40px;
   background: #EC2324;
   color: #EBE4CF;
@@ -188,6 +201,25 @@ body {
 }
 
 .navbar__btn-start span {
+  line-height: 40px;
+}
+
+.navbar__btn-solo {
+  display: none;
+  position: absolute;
+  right: 16px;
+  height: 40px;
+  background: #2D90A1;
+  color: #EBE4CF;
+  border-radius: 999px;
+  margin-right: 16px;
+  padding: 0 16px;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.navbar__btn-solo span {
   line-height: 40px;
 }
 
@@ -237,6 +269,7 @@ body {
   border-radius: 8px;
   background: #EBE4CF;
   margin: 0 16px;
+  font-size: 24px;
 }
 
 .cards-plan-triple {

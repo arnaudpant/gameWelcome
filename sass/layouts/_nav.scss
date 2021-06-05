@@ -3,24 +3,13 @@
 }
 
 
-
-
-
 //  *** NAVBAR Partie verte ***
 .navbar-over {
   height: 96px;
   width: 100%;
-  @extend %flex-spaceBetween;
+  @extend %flex-full-center;
   background-color: $color-vert;
-  // z-index: 1;
   @extend %boxShadow2;
-}
-
-
-.navbar__chrono {
-  height: 100%;
-  width: 1%;
-  // @include border-test;
 }
 
 
@@ -50,6 +39,8 @@
 
 
 .navbar__btn-start {
+  position: absolute;
+  right: 16px;
   height: 40px;
   background: $color-rouge;
   color: $color-beige;
@@ -62,6 +53,25 @@
   cursor: pointer;
 
     span {
+      line-height: 40px;
+    }
+}
+
+.navbar__btn-solo {
+  display: none;
+  position: absolute;
+  right: 16px;
+  height: 40px;
+  background: $color-bleu;
+  color: $color-beige;
+  border-radius: 999px;
+  @extend %boxShadow4;
+  margin-right: 16px;
+  padding: 0 16px;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  span {
       line-height: 40px;
     }
 }

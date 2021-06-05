@@ -44,6 +44,8 @@
     background: $color-beige;
     margin: 0 $margin2;
     @extend %boxShadow1;
+    @extend %flex-full-center;
+    font-size: 24px;
 }
 
 
