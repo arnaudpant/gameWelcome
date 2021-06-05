@@ -7,8 +7,9 @@
 }
 
 body {
-  font-family: sans-serif;
-  background: $color-vert;
+  @extend %police-para;
+  background: $color-bcg;
+  height: 100vh;
 }
 
 

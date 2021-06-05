@@ -1,0 +1,12 @@
+@mixin absolute-elt ($top, $bottom, $left, $right, $x, $y) {
+    position: absolute;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+    transform: translate(-x, -y);
+}
+
+@mixin border-test($color: black) {
+    border: 1px solid $color;
+} 

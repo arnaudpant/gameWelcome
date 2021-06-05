@@ -1,8 +1,50 @@
+.navbar__logo .navbar__logo__title {
+  font-family: 'Lobster', cursive;
+}
+
+body {
+  font-family: 'Special Elite', cursive;
+}
+
+.navbar__logo, .container, .box-cards-travaux, .double-cards-travaux, .box-btn, .box-cards-plan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-over {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 /* Shadow 0dp */
 /* Shadow 1dp */
 /* Shadow 2dp */
+.navbar-over, .navbar-under, .container, .double-cards-travaux, .card {
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
 /* Shadow 3dp */
 /* Shadow 4dp */
+.navbar__btn-start {
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
 /* Shadow 6dp */
 /* Shadow 8dp */
 /* Shadow 9dp */
@@ -19,226 +61,94 @@
 }
 
 body {
-  font-family: sans-serif;
-  background: #89b79b;
+  background: #7FAC8C;
+  height: 100vh;
 }
 
 .navbar {
-  height: 64px;
-  width: 100%;
-  background: #e6c9cd;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-shadow: 0px 6px 7px -3px rgba(0, 0, 0, 0.5), 0px 3px 10px 4px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 6px 7px -3px rgba(0, 0, 0, 0.5), 0px 3px 10px 4px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 
-h1 {
-  font-family: fantasy;
-  color: #f0212b;
-  font-size: 48px;
-  letter-spacing: 8px;
+.navbar-over {
+  height: 96px;
+  width: 100%;
+  background-color: #87C4A3;
 }
 
-.navbar__start {
+.navbar__chrono {
+  height: 100%;
+  width: 1%;
+}
+
+.navbar__logo {
+  position: relative;
+}
+
+.navbar__logo .navbar__logo__circle {
+  background: #EBE4CF;
+  height: 88px;
+  width: 88px;
+  border-radius: 50%;
   position: absolute;
-  right: 48px;
-  width: 108px;
-  height: 48px;
-  background: #f9dd9e;
+  top: -5px;
+  left: -20px;
+}
+
+.navbar__logo .navbar__logo__title {
+  font-size: 40px;
+  color: #EC2324;
+  text-shadow: 2px 0px 0px #EBE4CF, -2px 0px 0px #EBE4CF, 0px 2px 0px #EBE4CF, 0px -2px 0px #EBE4CF, 0px -2px 0px #EBE4CF, -7px 0px 0px #2D90A1, -12px 0px 0px #2D90A1, -12px 0px 0px #2D90A1;
+  z-index: 10;
+}
+
+.navbar__btn-start {
+  height: 40px;
+  background: #EC2324;
+  color: #EBE4CF;
   border-radius: 999px;
-  -webkit-box-shadow: 0px 6px 7px -3px rgba(0, 0, 0, 0.5), 0px 3px 10px 4px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 6px 7px -3px rgba(0, 0, 0, 0.5), 0px 3px 10px 4px rgba(0, 0, 0, 0.2);
+  margin-right: 16px;
+  padding: 0 16px;
+  text-align: center;
+  font-size: 24px;
   cursor: pointer;
 }
 
-.navbar__start span {
-  color: #f0212b;
-  font-size: 24px;
-  line-height: 24px;
-  text-align: center;
-  display: block;
-  margin: 12px;
+.navbar__btn-start span {
+  line-height: 40px;
+}
+
+.navbar-under {
+  height: 96px;
+  width: 100%;
+  background-color: #E4A2A0;
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  z-index: -1;
+  -webkit-transform: rotateZ(2deg);
+          transform: rotateZ(2deg);
 }
 
 .container {
-  /*   border: 1px solid black; */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  background: #F5DEA3;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  border-radius: 24px;
+  margin: 48px 16px;
 }
 
-.cards-travaux {
-  /*   border: 1px solid red; */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 24px;
-}
-
-.cards-travaux__double {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0 24px;
+.double-cards-travaux {
+  margin: 16px;
+  background: #E4A2A0;
 }
 
 .card {
-  height: 224px;
-  width: 160px;
-  margin: 16px 8px;
+  height: 250px;
+  width: 180px;
+  background: #EBE4CF;
   border-radius: 16px;
-  background: #d0caa8;
-  -webkit-box-shadow: 0px 6px 7px -3px rgba(0, 0, 0, 0.5), 0px 3px 10px 4px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 6px 7px -3px rgba(0, 0, 0, 0.5), 0px 3px 10px 4px rgba(0, 0, 0, 0.2);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-}
-
-.card-little-logo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 0 16px 0 0;
-}
-
-.card1-face__number,
-.card2-face__number,
-.card3-face__number {
-  font-size: 100px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.cards-plan {
-  margin: 24px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.card-plan-box-nbr {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  color: #f0212b;
-}
-
-.card-plan-box {
-  height: 132px;
-  width: 140px;
-  background: #c8bf96;
-  font-size: 28px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.card-plan-box-point {
-  width: 140px;
-  margin-top: 8px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.card-plan-box-point > div {
-  width: 50%;
-  text-align: center;
-}
-
-.box-point11,
-.box-point21,
-.box-point31 {
-  font-size: 32px;
-}
-
-.gamebar {
-  margin: 24px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.gamebar .gamebar__btn {
-  margin: 0 48px;
-  cursor: pointer;
+  margin: 16px 16px;
 }
 /*# sourceMappingURL=style.css.map */

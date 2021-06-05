@@ -6,6 +6,7 @@
   <meta name="description" content="Jeux Welcome" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="init.css" />
   <link rel="stylesheet" type="text/css" href="style.css" />
   
   <title>Welcome the game</title>
@@ -13,143 +14,68 @@
 
 <body>
 
+    <!-- ***** NAVBAR ***** -->
 
-  <nav class="navbar">
+    <div class="navbar">
 
-    <div class="navbar__burger"></div>
-
-    <div class="navbar__title">
-      <h1>Welcome</h1>
-    </div>
-
-    <div class="navbar__start"><span>START</span></div>
-
-    <div class="navbar__chrono"></div>
-
-  </nav>
-
-
-
-
-
-  <div class="container">
+        <nav class="navbar-over">
+    
+            <div class="navbar__chrono"></div>
+    
+            <div class="navbar__logo">
+				<div class="navbar__logo__circle"></div>
+				<div class="navbar__logo__title"><h1>Welcome</h1></div>
+			</div>
+    
+            <div class="navbar__btn-start"><span>START</span></div>
+                
+        </nav>
 
 
-    <div class="box-info"></div>
-
-
-    <div class="cards-travaux">
-
-      <div class="cards-travaux__double">
-
-        <div class="card card1-face">
-          <div class="card1-face__logo-next card-little-logo"></div>
-          <div class="card1-face__number"></div>
-        </div>
-
-        <div class="card card1-action"></div>
-
-      </div>
-
-
-      <div class="cards-travaux__double">
-
-        <div class="card card2-face">
-          <div class="card2-face__logo-next card-little-logo"></div>
-          <div class="card2-face__number"></div>
-        </div>
-
-        <div class="card card2-action"></div>
-
-      </div>
-
-
-      <div class="cards-travaux__double">
-
-        <div class="card card3-face">
-          <div class="card3-face__logo-next card-little-logo"></div>
-          <div class="card3-face__number"></div>
-        </div>
-
-        <div class="card card3-action"></div>
-
-      </div>
+        <div class="navbar-under"></div>
 
     </div>
+    
+    
 
 
-    <div class="cards-plan">
+    <!-- ***** CONTAINER ***** -->
+ 
+    <div class="container">
 
 
-      <div class="card card1-plan">
+        <div class="box-cards-travaux">
 
-        <div class="card-plan-box-nbr">N°1</div>
+			<div class="double-cards-travaux">
+				<div class="card card-travaux--face1"></div>
+				<div class="card card-travaux--dos1"></div>
+			</div>
 
-        <div class="card-plan-box">
-          <div class="card-plan-box__n1"></div>
-        </div>
+			<div class="double-cards-travaux">
+				<div class="card card-travaux--face2"></div>
+				<div class="card card-travaux--dos2"></div>
+			</div>
 
-        <div class="card-plan-box-point">
-          <div class="box-point11"></div>
-          <div class="box-point12"></div>
-        </div>
+			<div class="double-cards-travaux">
+				<div class="card card-travaux--face3"></div>
+				<div class="card card-travaux--dos3"></div>
+			</div>
 
-      </div>
-
-
-      <div class="card card2-plan">
-
-        <div class="card-plan-box-nbr">N°2</div>
-
-        <div class="card-plan-box">
-          <div class="card-plan-box__n2"></div>
-        </div>
-
-        <div class="card-plan-box-point">
-          <div class="box-point21"></div>
-          <div class="box-point22"></div>
-        </div>
-
-      </div>
+		</div>
 
 
-      <div class="card card3-plan">
+        <div class="box-btn"></div>
 
-        <div class="card-plan-box-nbr">N°3</div>
 
-        <div class="card-plan-box">
-          <div class="card-plan-box__n3"></div>
-        </div>
-
-        <div class="card-plan-box-point">
-          <div class="box-point31"></div>
-          <div class="box-point32"></div>
-        </div>
-
-      </div>
+        <div class="box-cards-plan"></div>
 
 
     </div>
 
 
-    <div class="gamebar">
-      <div class="gamebar__btn btn-prev"><svg viewBox="0 0 512 512" width="100" title="arrow-alt-circle-left"
-          fill="#2e93a5">
-          <path
-            d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zm116-292H256v-70.9c0-10.7-13-16.1-20.5-8.5L121.2 247.5c-4.7 4.7-4.7 12.2 0 16.9l114.3 114.9c7.6 7.6 20.5 2.2 20.5-8.5V300h116c6.6 0 12-5.4 12-12v-64c0-6.6-5.4-12-12-12z" />
-        </svg></div>
-      <div class="gamebar__btn btn-next"><svg viewBox="0 0 512 512" width="100" title="arrow-alt-circle-right"
-          fill="#2e93a5">
-          <path
-            d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zM140 300h116v70.9c0 10.7 13 16.1 20.5 8.5l114.3-114.9c4.7-4.7 4.7-12.2 0-16.9l-114.3-115c-7.6-7.6-20.5-2.2-20.5 8.5V212H140c-6.6 0-12 5.4-12 12v64c0 6.6 5.4 12 12 12z" />
-        </svg></div>
-    </div>
+    <!-- **** FOOTER ***** -->
 
-
-  </div>
-
-
-  <footer></footer>
+    <footer></footer>
 
   <script src="app.js"></script>
 </body>
