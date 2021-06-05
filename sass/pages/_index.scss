@@ -51,6 +51,7 @@
 
 
 // *** Cartes plan ***
-.box-cards-plan {
+.cards-plan-triple {
     @extend %flex-full-center;
+    flex-wrap: wrap;
 }

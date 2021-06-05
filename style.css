@@ -9,7 +9,7 @@
 
 body {
   background: #7FAC8C;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .navbar__logo .navbar__logo__title {
@@ -193,5 +193,10 @@ body {
   border-radius: 8px;
   background: #EBE4CF;
   margin: 0 16px;
+}
+
+.cards-plan-triple {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 /*# sourceMappingURL=style.css.map */
