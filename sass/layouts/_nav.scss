@@ -10,12 +10,21 @@
   @extend %flex-full-center;
   background-color: $color-vert;
   @extend %boxShadow2;
+
+  @media screen and (max-width: 600px) {
+           height: 60px;
+        }
 }
 
 
 .navbar__logo {
   @extend %flex-full-center;
   position: relative;
+
+  // @media screen and (max-width: 600px) {
+  //         display: flex;
+  //         justify-content: space-between;
+  //       }
 
   .navbar__logo__circle {
     background: $color-beige;
@@ -25,6 +34,11 @@
     position: absolute;
     top: -5px;
     left: -20px;
+
+    @media screen and (max-width: 600px) {
+           height: 44px;
+            width: 44px;
+        }
   }
 
   .navbar__logo__title {
@@ -33,6 +47,11 @@
     color: $color-rouge;
     text-shadow: 2px 0px 0px $color-beige, -2px 0px 0px $color-beige, 0px 2px 0px $color-beige, 0px -2px 0px $color-beige, 0px -2px 0px $color-beige, -7px 0px 0px $color-bleu, -12px 0px 0px $color-bleu, -12px 0px 0px $color-bleu;
     z-index: 10;
+
+    @media screen and (max-width: 600px) {
+           font-size: 30px;
+           justify-content: start;
+        }
   }
 
 }
@@ -45,15 +64,26 @@
   background: $color-rouge;
   color: $color-beige;
   border-radius: 999px;
-  @extend %boxShadow4;
+  @extend %boxShadow2;
   margin-right: 16px;
   padding: 0 16px;
   text-align: center;
   font-size: 24px;
   cursor: pointer;
 
+  @media screen and (max-width: 600px) {
+          right: 8px;
+          height: 30px;
+          margin-right: 8px;
+          padding: 0 8px;
+          font-size: 12px;
+        }
+
     span {
       line-height: 40px;
+      @media screen and (max-width: 600px) {
+         line-height: 30px;
+        }
     }
 }
 
@@ -65,14 +95,27 @@
   background: $color-bleu;
   color: $color-beige;
   border-radius: 999px;
-  @extend %boxShadow4;
+  @extend %boxShadow2;
   margin-right: 16px;
   padding: 0 16px;
   text-align: center;
   font-size: 24px;
   cursor: pointer;
+
+  @media screen and (max-width: 600px) {
+         right: 8px;
+        height: 30px;
+        margin-right: 8px;
+        padding: 0 8px;
+        font-size: 12px;
+  }
+
   span {
       line-height: 40px;
+
+      @media screen and (max-width: 600px) {
+         line-height: 30px;
+        }
     }
 }
 
@@ -91,4 +134,8 @@
   z-index: -1;
   transform: rotateZ(2deg);
   @extend %boxShadow2;
+
+  @media screen and (max-width: 600px) {
+         height: 60px;
+  }
 }

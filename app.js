@@ -146,6 +146,23 @@ function startNewGame() {
   affichageNumberCard();
 }
 
+function continueGame() {
+  arrayPlayCardTravaux = arrayCardTravaux.slice();
+  melangeArray(arrayPlayCardTravaux);
+  
+  arrayPlayCardPlan1 = arrayCardPlan1.slice();
+  melangeArray(arrayPlayCardPlan1);
+  
+  arrayPlayCardPlan2 = arrayCardPlan2.slice();
+  melangeArray(arrayPlayCardPlan2);
+  
+  arrayPlayCardPlan3 = arrayCardPlan3.slice();
+  melangeArray(arrayPlayCardPlan3);
+
+  affichageCardsTravaux();
+  affichageNumberCard();
+}
+
 
 function melangeArray(array) {
   for (let i = array.length - 1; i >= 0; i--) {
@@ -208,7 +225,6 @@ cardPElt.forEach(element => {
 
 function cardPReturn(a) {
   a.childNodes[3].style.display = 'none';
-  a.childNodes[5].style.fontSize = '50px';
 }
 
 
@@ -217,11 +233,14 @@ function cardPReturn(a) {
 
 // +++ Changement de cartes +++
 function nextCard() {
-  if (numberTour > 78 && !partieSolo) {
+  if (numberTour > 72 && !partieSolo) {
     numberTour = 0;
+    continueGame();
+
   } else {
     numberTour = numberTour + 3;
   }
+  console.log(numberTour);
   affichageCardsTravaux();
   affichageNumberCard();
   return numberTour
@@ -269,9 +288,9 @@ function affichageCardsTravaux() {
 //   Card 1
   card1NumberElt.innerText = arrayPlayCardTravaux[numberTour][0];
   affichageDosCardTravaux(arrayPlayCardTravaux[numberTour][1], card1ActionElt);
-
-  affichageCardTravauxLittleLogo(arrayPlayCardTravaux[numberTour + 3][1], card1CoinElt);
   
+  affichageCardTravauxLittleLogo(arrayPlayCardTravaux[numberTour + 3][1], card1CoinElt);
+    
 //  Card 2 
   card2NumberElt.innerText = arrayPlayCardTravaux[numberTour + 1][0];
   affichageDosCardTravaux(arrayPlayCardTravaux[numberTour + 1][1], card2ActionElt);
@@ -294,27 +313,27 @@ function affichageCardsTravaux() {
 function affichageDosCardTravaux(numberCardDos, cardXActionElt) {
   switch (numberCardDos) {
     case 'géometre': 
-      cardXActionElt.innerHTML = '<img src="/images/card-geometre.svg" alt="image geometre">';
+      cardXActionElt.innerHTML = '<img src="images/card-geometre.svg" alt="geometre">';
       break;
       
      case 'bis': 
-      cardXActionElt.innerHTML = '<img src="/images/card-bis.svg" alt="image bis">';
+      cardXActionElt.innerHTML = '<img src="images/card-bis.svg" alt="bis">';
       break;
       
       case 'paysagiste': 
-      cardXActionElt.innerHTML = '<img src="/images/card-paysagiste.svg" alt="image paysagiste">';
+      cardXActionElt.innerHTML = '<img src="images/card-paysagiste.svg" alt="paysagiste">';
       break;
       
       case 'immobilier': 
-      cardXActionElt.innerHTML = '<img src="/images/card-immobilier.svg" alt="image immobilier">';
+      cardXActionElt.innerHTML = '<img src="images/card-immobilier.svg" alt="immobilier">';
       break;
       
       case 'piscine': 
-      cardXActionElt.innerHTML = '<img src="/images/card-piscine.svg" alt="image piscine">';
+      cardXActionElt.innerHTML = '<img src="images/card-piscine.svg" alt="piscine">';
       break;
       
       case 'interim': 
-      cardXActionElt.innerHTML = '<img src="/images/card-interim.svg" alt="image interim">';
+      cardXActionElt.innerHTML = '<img src="images/card-interim.svg" alt="interim">';
       break;
       
   }
@@ -324,27 +343,27 @@ function affichageDosCardTravaux(numberCardDos, cardXActionElt) {
 function affichageCardTravauxLittleLogo(numberCardNumber, cardXNumberLogoElt) {
   switch (numberCardNumber) {
     case 'géometre': 
-      cardXNumberLogoElt.innerHTML = '<img src="/images/card-geometre.svg" alt="image geometre">';
+      cardXNumberLogoElt.innerHTML = '<img src="images/card-geometre.svg" alt="geometre">';
       break;
       
      case 'bis': 
-      cardXNumberLogoElt.innerHTML = '<img src="/images/card-bis.svg" alt="image bis">';
+      cardXNumberLogoElt.innerHTML = '<img src="images/card-bis.svg" alt="bis">';
       break;
       
       case 'paysagiste': 
-      cardXNumberLogoElt.innerHTML = '<img src="/images/card-paysagiste.svg" alt="image paysagiste">';
+      cardXNumberLogoElt.innerHTML = '<img src="images/card-paysagiste.svg" alt="paysagiste">';
       break;
       
       case 'immobilier': 
-      cardXNumberLogoElt.innerHTML = '<img src="/images/card-immobilier.svg" alt="image immobilier">';
+      cardXNumberLogoElt.innerHTML = '<img src="images/card-immobilier.svg" alt="immobilier">';
       break;
       
       case 'piscine': 
-      cardXNumberLogoElt.innerHTML = '<img src="/images/card-piscine.svg" alt="image piscine">';
+      cardXNumberLogoElt.innerHTML = '<img src="images/card-piscine.svg" alt="piscine">';
       break;
       
       case 'interim': 
-      cardXNumberLogoElt.innerHTML = '<img src="/images/card-interim.svg" alt="image interim">';
+      cardXNumberLogoElt.innerHTML = '<img src="images/card-interim.svg" alt="interim">';
       break;    
   }
  }

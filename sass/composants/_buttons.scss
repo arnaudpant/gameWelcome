@@ -1,7 +1,6 @@
 .box-btn__prev {
   height: 48px;
   width: 48px;
-  // @include border-test;
   transform: rotate(180deg);
   cursor: pointer;
 }
@@ -9,6 +8,5 @@
 .box-btn__next {
   height: 80px;
   width: 80px;
-  // @include border-test;
   cursor: pointer;
 }

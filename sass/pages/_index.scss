@@ -5,6 +5,11 @@
     @extend %boxShadow2;
     @extend %flex-full-center;
     flex-direction: column;
+
+    @media screen and (max-width: 600px) {
+           border-radius: 12px;
+            margin: $margin3 $margin3;
+        }
 }
 
 
@@ -14,7 +19,10 @@
     @extend %flex-full-center;
     flex-wrap: wrap;
     margin: $margin2;
-    // @include border-test(red);
+
+    @media screen and (max-width: 600px) {
+           margin: $margin1;
+        }
 }
 
 
@@ -31,10 +39,7 @@
 // *** Boutons ***
 .box-btn {
     @extend %flex-full-center;
-    // height: 56px;
-    width: 33%;
     margin: $margin2;
-    // @include border-test;
 }
 
 .box-btn__compteur {
