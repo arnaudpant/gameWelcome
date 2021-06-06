@@ -1,12 +1,18 @@
-/*
+/* ++++++++++++++++++++++++++++++++++++++++
 
-******* TP Jeux Welcome *******
+     ******* Jeux Welcome *******
+    
+    Created by Arnaud P. from the original 
+    game Welcome - june 2021
 
-*/
+++++++++++++++++++++++++++++++++++++++++ */
+ 
+
+
 
 
 // =======================================
-// INITIALISATION
+// INIT THE GAME
 // =======================================
 const arrayCardTravaux = [
   [1, 'géometre'], [1, 'bis'], [1, 'bis'],
@@ -60,8 +66,12 @@ const arrayCardPlan3 = [
   [[1, 2, 6], 12, 7]
 ];
 
+
+
+
+
 // =======================================
-// Elt
+// ELT 
 // =======================================
 const startBtnElt = document.querySelector('.navbar__btn-start');
 const soloBtnElt = document.querySelector('.navbar__btn-solo');
@@ -96,6 +106,9 @@ let btnNextElt = document.querySelector('.box-btn__next');
 let btnCompteur = document.querySelector('.box-btn__compteur');
 
 
+
+
+
 // =======================================
 // EventListener
 // =======================================
@@ -103,6 +116,8 @@ startBtnElt.addEventListener('click', startNewGame);
 soloBtnElt.addEventListener('click', startSoloGame);
 btnPrevElt.addEventListener('click', prevCard);
 btnNextElt.addEventListener('click', nextCard);
+
+
 
 
 
@@ -118,12 +133,18 @@ let soloNbr = 42 + Math.floor(Math.random() * 39);
 let partieSolo = false;
 
 
-// =======================================
-//  ****** Functions ******
-// =======================================
 
 
-// +++ Clic sur Start +++
+/*
+=======================================
+        ****** Functions ******
+=======================================
+*/
+
+
+// =======================================
+// START THE GAME & SOLO
+// =======================================
 
 function startNewGame() {
   arrayPlayCardTravaux = arrayCardTravaux.slice();
@@ -146,6 +167,17 @@ function startNewGame() {
   affichageNumberCard();
 }
 
+
+function melangeArray(array) {
+  for (let i = array.length - 1; i >= 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+   }
+  return array;
+}
+
+
+
 function continueGame() {
   arrayPlayCardTravaux = arrayCardTravaux.slice();
   melangeArray(arrayPlayCardTravaux);
@@ -164,17 +196,6 @@ function continueGame() {
 }
 
 
-function melangeArray(array) {
-  for (let i = array.length - 1; i >= 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-   }
-  return array;
-}
-
-
-
-
 
 // +++ Partie Solo +++
 
@@ -189,7 +210,10 @@ function startSoloGame() {
 
 
 
-// +++ Cartes plans +++
+// =======================================
+// CARTES PLAN
+// =======================================
+
 
 function affichageCardsPlan() {
   cardPlanBox1.innerText = arrayPlayCardPlan1[0][0].join('-');
@@ -197,6 +221,7 @@ function affichageCardsPlan() {
   cardPlanBox3.innerText = arrayPlayCardPlan3[0][0].join('-');
   affichageCardsPlanPoint()
 }
+
 
 function affichageCardsPlanPoint() {
   cardPlanPoint11.innerText = arrayPlayCardPlan1[0][1];
@@ -215,8 +240,8 @@ function affichageCardsPlanPoint() {
   cardPlanPoint32.style.background = '#c7bb91';
 }
 
-// Clic sur cartes plan
 
+// Clic sur cartes plan
 cardPElt.forEach(element => {
   element.addEventListener('click', () => {
     cardPReturn(element)
@@ -231,20 +256,25 @@ function cardPReturn(a) {
 
 
 
-// +++ Changement de cartes +++
+// =======================================
+// CARTES SUIVANTES - PRECEDENTES
+// =======================================
+
+
 function nextCard() {
   if (numberTour > 72 && !partieSolo) {
     numberTour = 0;
     continueGame();
-
   } else {
     numberTour = numberTour + 3;
   }
+
   console.log(numberTour);
   affichageCardsTravaux();
   affichageNumberCard();
   return numberTour
 }
+
 
 function prevCard() {
   if (numberTour >= 3) {
@@ -255,8 +285,8 @@ function prevCard() {
   } else {
     return 
   }
-  
 }
+
 
 function affichageNumberCard() {
   btnCompteur.innerText = numberTour + 3;
@@ -266,10 +296,12 @@ function affichageNumberCard() {
 
 
 
-// +++ Affichage des cartes number +++
+// =======================================
+// CARTES TRAVAUX
+// =======================================
+
 
 function affichageCardsTravaux() {
-  
   if (partieSolo) {
     if (arrayPlayCardTravaux[numberTour][0] == "Solo" || arrayPlayCardTravaux[numberTour + 1][0] == "Solo" || arrayPlayCardTravaux[numberTour + 2][0] == "Solo") {
       card1NumberElt.style.fontSize = "60px";
@@ -305,10 +337,7 @@ function affichageCardsTravaux() {
 }
 
 
-
-
-
-// +++ Affichage des cartes travaux +++
+// Affichage des images
 
 function affichageDosCardTravaux(numberCardDos, cardXActionElt) {
   switch (numberCardDos) {
