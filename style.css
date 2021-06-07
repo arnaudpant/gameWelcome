@@ -21,7 +21,7 @@ body {
 }
 
 .card,
-.cardP, .navbar-over, .navbar__logo, .container, .box-cards-travaux,
+.cardP, .navbar-over, .navbar__logo, .container, .box-chrono, .box-cards-travaux,
 .box-cards-plan, .cards-travaux-double,
 .cards-plan-triple, .box-btn, .box-btn__compteur {
   display: -webkit-box;
@@ -372,11 +372,21 @@ footer a {
   }
 }
 
+.box-chrono {
+  height: 24px;
+  width: 60px;
+  color: #EBE4CF;
+  padding: 4px;
+  margin: 8px;
+  background: #E4A2A0;
+  text-align: center;
+}
+
 .box-cards-travaux,
 .box-cards-plan {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 16px;
+  margin: 8px;
 }
 
 @media screen and (max-width: 600px) {

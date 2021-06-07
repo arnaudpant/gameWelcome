@@ -13,12 +13,23 @@
 }
 
 
+.box-chrono {
+    height: 24px;
+    width: 60px;
+    @extend %flex-full-center;
+    color: $color-beige;
+    padding: 4px;
+    margin: $margin1;
+    background: $color-rose;
+    text-align: center;
+}
+
 // *** Cartes travaux ***
 .box-cards-travaux,
 .box-cards-plan {
     @extend %flex-full-center;
     flex-wrap: wrap;
-    margin: $margin2;
+    margin: $margin1;
 
     @media screen and (max-width: 600px) {
            margin: $margin1;
