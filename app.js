@@ -134,8 +134,6 @@ let arrayPlayCardPlan2 = [];
 let arrayPlayCardPlan3 = [];
 let soloNbr = 42 + Math.floor(Math.random() * 39);
 let partieSolo = false;
-let tictac = 0;
-let minutesChrono = 0;
 
 
 
@@ -169,7 +167,7 @@ function startNewGame() {
   affichageCardsTravaux();
   affichageCardsPlan();
   affichageNumberCard();
-  setInterval(startChrono, 1000);
+  setInterval(chronoRunVar, 1000);
 }
 
 
@@ -214,25 +212,33 @@ function startSoloGame() {
 
 // +++ Start Chrono +++
 function startChrono() {
-  if (tictac <= 9) {
-    chronoSecondesElt.innerHTML = `0${tictac}`;
-  } else if (tictac > 9 && tictac < 60) {
-    chronoSecondesElt.innerHTML = `${tictac}`;
-  }
+  let minutesChrono = 0;
+  let tictac = 0;
 
-  if (tictac == 60) {
-    chronoSecondesElt.innerHTML = "00";
-    tictac = 0;
-    minutesChrono++;
-    if (minutesChrono <= 9) {
-      chronoMinutesElt.innerHTML = `0${minutesChrono}`;
-    } else {
-      chronoMinutesElt.innerHTML = `${minutesChrono}`;
+  function chronoRun() {
+    if (tictac <= 9) {
+      chronoSecondesElt.innerHTML = `0${tictac}`;
+    } else if (tictac > 9 && tictac < 60) {
+      chronoSecondesElt.innerHTML = `${tictac}`;
     }
+  
+    
+    if (tictac == 60) {
+      chronoSecondesElt.innerHTML = "00";
+      tictac = 0;
+      minutesChrono++;
+      if (minutesChrono <= 9) {
+        chronoMinutesElt.innerHTML = `0${minutesChrono}`;
+      } else {
+        chronoMinutesElt.innerHTML = `${minutesChrono}`;
+      }
+    }
+    tictac++
   }
-  tictac++
+  return chronoRun;
 }
 
+let chronoRunVar = startChrono();
 
 // =======================================
 // CARTES PLAN
